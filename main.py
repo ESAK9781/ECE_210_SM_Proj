@@ -5,11 +5,18 @@ table = []
 
 def conv_bin(bin_l):
     cur_place = 1
+    val = 0
     for i in range(len(bin_l)):
+        ind = len((bin_l - 1) - i)
+        if (bin_l[ind] == 1):
+            val += cur_place
+        cur_place *= 2
+    return val
+        
         
 
 def computeOut(inp):
-    
+    a = [inp[0], inp[1]]
 
 
 def cpy(lst):
