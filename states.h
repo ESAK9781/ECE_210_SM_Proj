@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct StateM_Struct {
     bool s2;
@@ -80,10 +81,19 @@ StateOut eval(StateMachine * sm, StateIn in) {
   * @return pointer to the new state machine
   */
 
-  StateMachine * createMachine(bool s2, bool s1) {
-    StateMachine * out = (StateMachine *) malloc(sizeof(StateMachine));
-    out->s2 = s2;
-    out->s1 = s1;
-  }
+StateMachine * createMachine(bool s2, bool s1) {
+  StateMachine * out = (StateMachine *) malloc(sizeof(StateMachine));
+  out->s2 = s2;
+  out->s1 = s1;
+}
+
+
+
+/**
+ * @brief print a state machine to stdout
+ */
+void printMachine(StateMachine * sm) {
+    printf("State: %c%c\n", (sm->s2) ? '1' : '0', (sm->s1) ? '1' : '0');
+}
 
 #endif
